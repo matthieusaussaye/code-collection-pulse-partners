@@ -1,15 +1,15 @@
-RESPONSE_SYNTHESIS_PROMPT_TMPL_LS: str = """ 
-            <<<IMPORTANT >>>
-            Don't write down table and calculation in your answer, use the result of them to make a deep and complete analysis of the data.\n
-            IMPORTANT PROMPT HERE.\n
-            <<<END IMPORTANT >>>
-            MANDATORY 1: At the end you will add a line with (Source: xxxxx)\n
-            MANDATORY 2: <MANDATORY 2.>\n
-            MANDATORY 3: NEVER SAY THAT THE DATA IS LIMITED AND DON'T SAY FURTHER ANALYSIS IS NEEDED.
-            <<<ULTRA IMPORTANT>>>
-            If there is no data in the DB to formulate a response, The customer can send a mail to xxx@xxx.com to get further informations. xxxx is happy to answer any and all questions you have about the xxx Data\n
-            <<<END ULTRA IMPORTANT>>>
-            """
+RESPONSE_SYNTHESIS_PROMPT_TMPL_LS = """ 
+                <<<IMPORTANT >>>
+                Don't write down table and calculation in your answer, use the result of them to make a deep and complete analysis of the data.\n
+                IMPORTANT PROMPT HERE.\n
+                <<<END IMPORTANT >>>
+                MANDATORY 1: At the end you will add a line with (Source: xxxxx)\n
+                MANDATORY 2: <MANDATORY 2.>\n
+                MANDATORY 3: NEVER SAY THAT THE DATA IS LIMITED AND DON'T SAY FURTHER ANALYSIS IS NEEDED.
+                <<<ULTRA IMPORTANT>>>
+                If there is no data in the DB to formulate a response, The customer can send a mail to xxx@xxx.com to get further informations. xxxx is happy to answer any and all questions you have about the xxx Data\n
+                <<<END ULTRA IMPORTANT>>>
+                """
 
 TEXT_TO_SQL_TMPL_LS = """ 
         <<<IMPORTANT INSTRUCTION>>>

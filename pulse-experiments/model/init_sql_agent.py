@@ -3,8 +3,6 @@
 
 import logging
 import sys
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 from langchain.utilities import SQLDatabase
 from dotenv import load_dotenv, find_dotenv
 import openai

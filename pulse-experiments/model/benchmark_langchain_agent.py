@@ -5,8 +5,6 @@ import argparse
 import logging
 import sys
 import init_sql_agent
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 import openai
 openai.api_key = ""
 
@@ -42,7 +40,7 @@ def benchmark_query_engine(query_engine,
                 'response': response.response,
                 'elapsed_time': elapsed_time,
                 'quality': "Untested",
-                'response_bin': check_response(response)
+                'response_bin': check_response_langchain(response)
             }
 
             results.append(result)

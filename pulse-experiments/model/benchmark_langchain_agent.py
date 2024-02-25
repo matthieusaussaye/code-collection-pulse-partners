@@ -11,37 +11,38 @@ import openai
 openai.api_key = ""
 
 
+
 def check_response_langchain(response):
     # Check if 'result' key is in response.metadata and it's not an empty list
     if response['intermediate_steps'][0][1]:
         return 1
     else:
         return 0
-def benchmark_sql_agent_langchain(queries,
-                                  agent,
-                                  folder,
-                                  query_augm=1,
-                                  outputfile="results.csv"):
-    # Benchmark your sql agent around 5 metrics: query retrieval, synthesis, sql query synthesis, sql query efficiency (1 or 0), time.
+
+
+def benchmark_query_engine(query_engine,
+                           queries,
+                           folder,
+                           query_augm=1,
+                           outputfile="results.csv"):
     results = []
     for query in queries:
         for i in range(query_augm) :
             start_time = time.time()
 
             # Executing the SQL query
-            response = agent.__call__(query)
-            print(response)
+            response = query_engine.query(query)
             end_time = time.time()
             elapsed_time = end_time - start_time
 
             # Quality assessment using GPT-4
             result = {
                 'query': query,
-                'sql_query': response['intermediate_steps'][0][0].dict()['tool_input'],
-                'response': response['output'],
+                'sql_query': response.metadata["sql_query"],
+                'response': response.response,
                 'elapsed_time': elapsed_time,
                 'quality': "Untested",
-                'response_bin': check_response_langchain(response)
+                'response_bin': check_response(response)
             }
 
             results.append(result)
@@ -66,6 +67,11 @@ def benchmark_sql_agent_langchain(queries,
     print(f"Data saved to CSV file: {outputfile}")
 
     return results
+
+def sql_retrieve(response) :
+    if response['intermediate_steps'][0] :
+        return response['intermediate_steps'][0][0].dict()['tool_input']
+    else: return None
 def load_global_variables_from_file(file_path):
     # Load global variables fron a file.
     global_vars = {}

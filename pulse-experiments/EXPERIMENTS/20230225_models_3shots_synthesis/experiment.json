@@ -1,0 +1,21 @@
+{"brand_performance_true": {"llms": ["gpt-4","gpt-4-0125-preview","gpt-3.5-turbo-0125"],
+                           "prompt_synthesis" :"RESPONSE_SYNTHESIS_PROMPT_TMPL_BA",
+                           "prompt_text_to_sql": "TEXT_TO_SQL_TMPL_BA",
+                           "queries":["query1",
+                                     "queryx."],
+                           "query_augm":3},
+ "license_selection_true":{"llms": ["gpt-4","gpt-4-0125-preview","gpt-3.5-turbo-0125"],
+                           "prompt_syntheis": "RESPONSE_SYNTHESIS_PROMPT_TMPL_LS",
+                           "prompt_text_to_sql": "TEXT_TO_SQL_TMPL_LS",
+                           "queries":["query1",
+                                     "queryx."],
+                           "query_augm":3},
+  "license_selection_false":{"llms": ["gpt-4","gpt-4-0125-preview","gpt-3.5-turbo-0125"],
+                           "prompt_syntheis": "RESPONSE_SYNTHESIS_PROMPT_TMPL_LS",
+                           "prompt_text_to_sql": "TEXT_TO_SQL_TMPL_LS",
+                           "queries":["query1",
+                                     "queryx."],
+                           "query_augm":3}
+                           }
+
+

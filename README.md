@@ -35,5 +35,5 @@ This repository is at the destination of any IT teams, Data Science agency, Data
 2. Launching command: ```nohup python model/benchmark_langchain_agent.py --folder EXPERIMENTS/<name_of_experiment_folder> > experiment_xyz.log```
 
 Please notice that this open source repository is not perfect and contains some amelioration that could be made such as: adding quality metrics, tuning llm parameters....
-The goal is to contribute to the growth of any data-driven companies by providing a robust text-to-sql benchmarking code which would be a key engine to test your text-to-sql systen before deploying it into production, for your specific use-case.
+The goal is to contribute to the growth of any data-driven companies by providing a robust text-to-sql benchmarking code which would be a key engine to test your text-to-sql system before deploying it into production, for your specific use-case.
 For any new ideas or contributions, you could send an e-mail to info@pulse-partners.ch and we would be happy to assist and help you in <72H
